@@ -14,17 +14,13 @@
             location: locationPath + 'bower_components/react',
             main: 'react'
         }, {
-            name: 'main',
-            location: locationPath + jsPath + 'main',
-            main: 'main'
+            name: 'app',
+            location: locationPath + jsPath + 'app',
+            main: 'App'
         }, {
-            name: 'appConfig'
-            , location: locationPath + jsPath + 'main'
-            , main: 'config'
-        }, {
-            name: 'app'
-            , location: locationPath + jsPath + 'app'
+            name: 'map',
+            location: locationPath + jsPath + 'map'
         }]
-    }, ['main']);
+    }, ['app']);
 
 })();
