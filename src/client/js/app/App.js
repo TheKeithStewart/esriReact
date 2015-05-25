@@ -3,26 +3,28 @@
 define([
     'react'
     , 'app/config'
-    , 'map/Controller'
-    , 'app/components/layout/Header'
-], function(
+    , 'layout/Header'
+    , 'layout/Body'
+], function (
     React
     , config
-    , MapController
     , Header
+    , Body
 ) {
 
     var App = React.createClass({
 
-        componentDidMount: function () {
-            MapController.init(config.defaultProps.mapOptions);
+        getDefaultProps: function () {
+            return {
+                defaultProps: config.defaultProps
+            }
         }
 
-        , render: function(){
+        , render: function () {
             return (
-                <div>
-                    <Header />
-                    <div id='map'></div>
+                <div className='app'>
+                    <Header title={this.props.appTitle} />
+                    <Body mapOptions={this.props.defaultProps.mapOptions} />
                 </div>
             );
         }

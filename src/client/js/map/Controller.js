@@ -18,7 +18,6 @@ define([
             app.map = _map.map;
 
             _map.on('ready', this.mapLoaded);
-
         },
 
         mapLoaded: function () {

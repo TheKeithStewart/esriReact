@@ -1,0 +1,50 @@
+.map-panel .settings-icon {
+    background: url("images/settings-icon.png") #fff no-repeat center;
+    border: 1px solid #57585a;
+    background-size: 22px 22px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    position: absolute;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    z-index: 50;
+    left: 20px;
+    top: 20px;
+}
+
+.app .slide-menu .column {
+    display: none;
+}
+
+.column {
+    position: absolute;
+    bottom: 0;
+    width: 0;
+    left: 0;
+    top: 0;
+}
+
+.app .slide-menu.open .column {
+    display: block;
+}
+
+.map-panel {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+}
+
+.map-panel .esriSimpleSlider {
+    top: 60px;
+}
+
+#BasemapToggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 50;
+}

@@ -5,9 +5,9 @@ define([
     // My Modules
     // Esri Modules
     "esri/map",
-    // Esri Dijjits
     "esri/dijit/Geocoder"
-], function (Evented, declare, Map, Geocoder) {
+    , "esri/dijit/BasemapToggle"
+], function (Evented, declare, Map, Geocoder, BasemapToggle) {
     'use strict';
 
     var _map = declare([Evented], {
@@ -31,21 +31,20 @@ define([
 
             self.map.on('load', function () {
                 self.map.resize();
-                //self.mapLoaded();
+                self.mapLoaded();
                 self.emit('ready', {});
             });
 
         },
 
         mapLoaded: function () {
-            //this.addWidgets();
+            this.addWidgets();
         },
 
         addWidgets: function () {
-            var self = this,
-                geocoder;
+            var self = this;
 
-            geocoder = new Geocoder({
+            var geocoder = new Geocoder({
                 map: self.map,
                 autoComplete: true,
                 arcgisGeocoder: {
@@ -54,10 +53,15 @@ define([
             }, "Geocoder");
             geocoder.startup();
 
+            var toggle = new BasemapToggle({
+                map: self.map,
+                basemap: "satellite"
+            }, "BasemapToggle");
+            toggle.startup();
         },
 
         addLayers: function () {
-
+            console.log("test");
         },
 
         addLayerError: function (err) {
