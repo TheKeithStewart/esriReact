@@ -12,8 +12,8 @@ define([
 
         render: function(){
             return (
-                <div>
-                    Header
+                <div className='header'>
+                    <span className='title'>{this.props.appTitle}</span>
                 </div>
             );
         }

@@ -14,7 +14,7 @@ define([
 
     var App = React.createClass({
 
-        getDefaultProps: function () {
+        getInitialState: function () {
             return {
                 defaultProps: config.defaultProps
             }
@@ -23,8 +23,8 @@ define([
         , render: function () {
             return (
                 <div className='app'>
-                    <Header title={this.props.appTitle} />
-                    <Body mapOptions={this.props.defaultProps.mapOptions} />
+                    <Header appTitle={this.state.defaultProps.appTitle} />
+                    <Body mapOptions={this.state.defaultProps.mapOptions} />
                 </div>
             );
         }

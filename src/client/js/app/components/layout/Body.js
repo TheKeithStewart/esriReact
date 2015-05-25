@@ -12,7 +12,7 @@ define([
 
         render: function() {
             return (
-                <div>
+                <div className='body'>
                     <SlideMenu mapOptions={this.props.mapOptions} />
                 </div>
             )

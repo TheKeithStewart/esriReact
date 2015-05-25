@@ -3,7 +3,7 @@ define([], function() {
 
     return {
         'defaultProps': {
-            'appTitle': 'TransTraks Mapping'
+            'appTitle': 'Mapping Application'
             , 'mapOptions': {
                 "basemap": "streets"
                 , "center": [
