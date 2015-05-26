@@ -2,17 +2,31 @@
 
 define([
     'react'
+    , 'map/Map'
     , 'map/Controller'
 ], function(
     React
+    , Map
     , MapController
 ) {
     'use strict';
 
     var MapPanel = React.createClass({
 
-        componentDidMount: function () {
-            MapController.init(this.props.mapOptions);
+        getInitialState: function() {
+            return {
+
+            }
+        }
+
+        , componentDidMount: function () {
+            //MapController.init(this.props.mapOptions);
+
+            var map = new Map(this.props.mapOptions);
+
+            map.on('ready', function() {
+                console.log(map);
+            });
         }
 
         , render: function(){

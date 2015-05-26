@@ -61,7 +61,7 @@ define([
         },
 
         addLayers: function () {
-            console.log("test");
+
         },
 
         addLayerError: function (err) {
