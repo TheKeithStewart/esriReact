@@ -2,10 +2,8 @@
 
 define([
     'react'
-    , 'app/config'
 ], function(
     React
-    , config
 ) {
 
     var Header = React.createClass({

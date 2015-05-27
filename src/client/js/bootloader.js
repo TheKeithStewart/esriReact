@@ -4,7 +4,7 @@
     var pathRX = new RegExp(/\/[^\/]+$/)
         , locationPath = location.pathname.replace(pathRX, '/');
 
-    var jsPath = 'dist/client/js/';
+    var jsPath = 'dist/client/js';
 
     window.requestAnimationFrame = (function() {
         return window.requestAnimationFrame ||
@@ -18,24 +18,17 @@
         async: true,
         parseOnLoad: true,
         packages: [{
-            name: 'react',
-            location: locationPath + 'bower_components/react',
-            main: 'react'
+            name: 'react'
+            , location: locationPath + 'bower_components/react'
+            , main: 'react'
         }, {
             name: 'classnames'
             , location: locationPath + 'bower_components/classnames'
             , main: 'index'
         }, {
-            name: 'app',
-            location: locationPath + jsPath + 'app',
-            main: 'App'
-        }, {
-            name: 'map',
-            location: locationPath + jsPath + 'map'
-        }, {
-            name: 'layout'
-            , location: locationPath + jsPath + 'app/components/layout'
+            name: 'main'
+            , location: locationPath + jsPath + '/main'
         }]
-    }, ['app']);
+    }, ['main']);
 
 })();

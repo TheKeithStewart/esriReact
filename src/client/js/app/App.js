@@ -2,35 +2,46 @@
 
 define([
     'react'
-    , 'app/config'
-    , 'layout/Header'
-    , 'layout/Body'
+    , 'config'
+    , 'esri/map'
 ], function (
     React
     , config
-    , Header
-    , Body
+    , Map
 ) {
 
     var App = React.createClass({
 
         getInitialState: function () {
             return {
-                defaultProps: config.defaultProps
+
             }
+        }
+
+        , componentDidMount: function () {
+            var map = new Map('map', config.mapOptions);
+
+            map.on('load', function() {
+
+            });
         }
 
         , render: function () {
             return (
                 <div className='app'>
-                    <Header appTitle={this.state.defaultProps.appTitle} />
-                    <Body mapOptions={this.state.defaultProps.mapOptions} />
+                    //<Header appTitle='test title' />
+                    //<Body map={this.props.map} />
+                    <div id='map'></div>
                 </div>
             );
         }
 
     });
 
-    React.render(<App />, document.getElementById('app'));
+    return {
+        loadApp: function(map) {
+            React.render(<App map={map} />, document.getElementById('app'));
+        }
+    }
 
 });

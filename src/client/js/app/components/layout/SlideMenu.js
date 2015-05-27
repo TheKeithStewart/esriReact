@@ -12,9 +12,15 @@ define([
     , classnames
 ) {
 
+    var map;
+
     var SlideMenu = React.createClass({
 
-        getInitialState: function() {
+        componentDidMount: function () {
+            map = this.props.map;
+        }
+
+        , getInitialState: function() {
             return {
                 menuOpen: false
             }
@@ -23,7 +29,7 @@ define([
         , getDefaultProps: function() {
             return {
                 menuId: 'MenuPanel',
-                panelId: 'MapPanel',
+                panelId: 'map',
                 menuWidth: 320,
                 fps: (1000 / 60),
                 duration: 275,
@@ -83,7 +89,7 @@ define([
                 } else {
                     self._updateMenuState();
                     // Add any other necessary code here
-                    app.map.resize();
+                    map.resize();
                 }
             }
 
@@ -114,7 +120,7 @@ define([
                     requestAnimationFrame(step);
                 } else {
                     // Add any other necessary code here
-                    app.map.resize();
+                    map.resize();
                 }
             }
 

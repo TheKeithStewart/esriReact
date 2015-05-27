@@ -7,8 +7,14 @@ gulp.task('react', function () {
         .pipe(gulp.dest('dist/client'));
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', ['react', 'style'], function(){
     gulp.watch(['src/client/*.js', 'src/client/**/*.js', 'src/client/**/**/*.js'], ['react']);
+    gulp.watch(['src/client/style/**.css'], ['style']);
 });
 
-gulp.task('default', ['react']);
+gulp.task('style', function() {
+    gulp.src('src/client/style/**.css')
+        .pipe(gulp.dest('dist/client/style'));
+});
+
+gulp.task('default', ['watch']);
