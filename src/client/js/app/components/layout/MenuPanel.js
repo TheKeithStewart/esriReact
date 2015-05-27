@@ -2,12 +2,14 @@
 
 define([
     'react'
-    , 'app/components/map/GeocoderWidget'
     , 'classnames'
+    , 'map/GeocoderWidget'
+    , 'map/BasemapToggleWidget'
 ], function(
     React
-    , GeocoderWidget
     , classnames
+    , GeocoderWidget
+    , BasemapToggleWidget
 ) {
 
     var map;
@@ -51,6 +53,7 @@ define([
             return (
                 <div className={classes} id='MenuPanel'>
                     <GeocoderWidget map={this.props.map}></GeocoderWidget>
+                    <BasemapToggleWidget map={this.props.map}></BasemapToggleWidget>
                 </div>
             )
         }

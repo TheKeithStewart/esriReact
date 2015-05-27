@@ -43,20 +43,8 @@
     top: 60px;
 }
 
-#BasemapToggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 50;
-}
-
-#map {
-    z-index: 1;
-}
-
 .header {
     background-color: #333;
-    /*position: absolute;*/
     color: #fff;
     height: 100px;
     right: 0;

@@ -2,10 +2,8 @@
 
 define([
     'react'
-    , 'map/BasemapToggleWidget'
 ], function(
     React
-    , BasemapToggleWidget
 ) {
     'use strict';
 
@@ -20,7 +18,6 @@ define([
         , render: function(){
             return (
                 <div>
-                    <BasemapToggleWidget map={this.props.map}></BasemapToggleWidget>
                 </div>
             );
         }
