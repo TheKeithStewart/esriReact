@@ -2,12 +2,14 @@
 
 define([
     'react'
+    , 'map/BasemapToggleWidget'
 ], function(
     React
+    , BasemapToggleWidget
 ) {
     'use strict';
 
-    var MapPanel = React.createClass({
+    var MapComponents = React.createClass({
 
         getInitialState: function() {
             return {
@@ -17,12 +19,13 @@ define([
 
         , render: function(){
             return (
-                <div id='MapPanel' className='map-panel'>
-                    <div className='settings-icon' onClick={this.props.clickToggle}></div>
+                <div>
+                    <BasemapToggleWidget map={this.props.map}></BasemapToggleWidget>
                 </div>
             );
         }
     });
 
-    return MapPanel;
+    return MapComponents;
+
 });

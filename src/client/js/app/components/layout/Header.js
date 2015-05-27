@@ -11,7 +11,7 @@ define([
         render: function(){
             return (
                 <div className='header'>
-                    <span className='title'>{this.props.appTitle}</span>
+                    <span className='title'>{this.props.defaultProps.appTitle}</span>
                 </div>
             );
         }

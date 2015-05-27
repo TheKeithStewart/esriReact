@@ -2,12 +2,18 @@
 
 define([
     'react'
-    , 'config'
+    , 'main/config'
     , 'esri/map'
+    , 'layout/Header'
+    , 'layout/MenuPanel'
+    , 'app/components/MapComponents'
 ], function (
     React
     , config
     , Map
+    , Header
+    , MenuPanel
+    , MapComponents
 ) {
 
     var App = React.createClass({
@@ -19,19 +25,15 @@ define([
         }
 
         , componentDidMount: function () {
-            var map = new Map('map', config.mapOptions);
 
-            map.on('load', function() {
-
-            });
         }
 
         , render: function () {
             return (
                 <div className='app'>
-                    //<Header appTitle='test title' />
-                    //<Body map={this.props.map} />
-                    <div id='map'></div>
+                    <Header defaultProps={config.defaultProps}></Header>
+                    <MenuPanel map={this.props.map}></MenuPanel>
+                    <MapComponents map={this.props.map}></MapComponents>
                 </div>
             );
         }

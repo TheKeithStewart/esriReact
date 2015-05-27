@@ -1,6 +1,7 @@
 require([
     'esri/map'
     , 'main/config'
+    , 'app/App'
     , 'dojo/domReady!'
 ], function(
     Map
@@ -10,6 +11,6 @@ require([
     var map = new Map('map', config.mapOptions);
 
     map.on('load', function() {
-        //App.loadApp(map);
+        App.loadApp(map);
     });
 });

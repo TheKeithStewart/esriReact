@@ -8,7 +8,7 @@ define([
     , BasemapToggle
 ) {
 
-    var BasemapToggle = React.createClass({
+    var BasemapToggleWidget = React.createClass({
 
         componentDidMount: function() {
             var toggle = new BasemapToggle({
@@ -27,6 +27,6 @@ define([
 
     });
 
-    return BasemapToggle;
+    return BasemapToggleWidget;
 
 });

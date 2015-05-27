@@ -4,7 +4,7 @@
     var pathRX = new RegExp(/\/[^\/]+$/)
         , locationPath = location.pathname.replace(pathRX, '/');
 
-    var jsPath = 'dist/client/js';
+    var jsPath = locationPath + 'dist/client/js';
 
     window.requestAnimationFrame = (function() {
         return window.requestAnimationFrame ||
@@ -27,7 +27,16 @@
             , main: 'index'
         }, {
             name: 'main'
-            , location: locationPath + jsPath + '/main'
+            , location: jsPath + '/main'
+        }, {
+            name: 'app'
+            , location: jsPath + '/app'
+        }, {
+            name: 'layout'
+            , location: jsPath + '/app/components/layout'
+        }, {
+            name: 'map'
+            , location: jsPath + '/app/components/map'
         }]
     }, ['main']);
 

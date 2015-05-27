@@ -14,8 +14,12 @@
     top: 20px;
 }
 
-.app .slide-menu .column {
+.slide-menu.close {
     display: none;
+}
+
+.slide-menu.open {
+    display: block;
 }
 
 .column {
@@ -27,12 +31,8 @@
     top: 0;
 }
 
-.app .slide-menu.open .column {
-    display: block;
-}
-
 .map-panel {
-    position: absolute;
+    position: relative;
     bottom: 0;
     right: 0;
     left: 0;
@@ -56,7 +56,7 @@
 
 .header {
     background-color: #333;
-    position: absolute;
+    /*position: absolute;*/
     color: #fff;
     height: 100px;
     right: 0;
