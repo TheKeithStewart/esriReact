@@ -25,18 +25,15 @@ define([
 
         , componentDidMount: function () {
             component = this;
-            //map = new Map('map', config.mapOptions);
-            //var component = this;
-            //map.on('load', function() {
-            //    component.setState({map: map});
-            //});
         }
 
         , render: function () {
             return (
-                <div className='app'>
-                    <Header defaultProps={config.defaultProps}></Header>
-                    <Body setMapState={this.setMapState} map={this.state.map}></Body>
+                <div className='container'>
+                    <div className='app'>
+                        <Header defaultProps={config.defaultProps}></Header>
+                        <Body setMapState={this.setMapState} map={this.state.map}></Body>
+                    </div>
                 </div>
             );
         }
