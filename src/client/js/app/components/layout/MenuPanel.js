@@ -21,7 +21,7 @@ define([
         , getDefaultProps: function() {
             return {
                 menuId: 'MenuPanel',
-                panelId: 'map',
+                panelId: 'MapPanel',
                 menuWidth: 320,
                 fps: (1000 / 60),
                 duration: 275,
@@ -101,7 +101,8 @@ define([
                 currentPosition = this.props.menuWidth,
                 useEasing = this.props.easing.enabled,
                 easeAmount = stepAmount / 2,
-                endingPosition = 0;
+                endingPosition = 0,
+                self = this;
 
             function step() {
                 // Get the next current position

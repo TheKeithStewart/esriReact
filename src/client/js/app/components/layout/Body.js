@@ -2,12 +2,12 @@
 
 define([
     'react'
-    , 'layout/SlideMenu'
-    , 'app/components/BasemapToggle'
+    , 'layout/MenuPanel'
+    , 'layout/MapPanel'
 ], function(
     React
-    , SlideMenu
-    , BasemapToggle
+    , MenuPanel
+    , MapPanel
 ) {
 
     var Body = React.createClass({
@@ -15,8 +15,8 @@ define([
         render: function() {
             return (
                 <div className='body'>
-                    <SlideMenu map={this.props.map} mapOptions={this.props.mapOptions} />
-                    <BasemapToggle map={this.props.map} />
+                    <MenuPanel map={this.props.map}></MenuPanel>
+                    <MapPanel setMapState={this.props.setMapState} map={this.props.map}></MapPanel>
                 </div>
             )
         }

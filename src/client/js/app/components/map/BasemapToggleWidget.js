@@ -11,18 +11,29 @@ define([
     var BasemapToggleWidget = React.createClass({
 
         componentDidMount: function() {
-            var toggle = new BasemapToggle({
-                map: this.props.map,
-                basemap: "satellite"
-            }, "BasemapToggle");
-            toggle.startup();
+            if (this.props.map) {
+                this.startBasemap(this.props.map);
+            }
+        }
 
+        , componentWillUpdate: function(nextProps, nextState) {
+            if (nextProps.map) {
+                this.startBasemap(nextProps.map);
+            }
         }
 
         , render: function(){
             return (
                 <div id='BasemapToggle'></div>
             );
+        }
+
+        , startBasemap: function(map) {
+            var toggle = new BasemapToggle({
+                map: map,
+                basemap: "satellite"
+            }, "BasemapToggle");
+            toggle.startup();
         }
 
     });
