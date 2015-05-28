@@ -1,16 +1,13 @@
-require([
-    'esri/map'
-    , 'main/config'
+/** @jsx React.DOM */
+
+define([
+    'react'
     , 'app/App'
-    , 'dojo/domReady!'
 ], function(
-    Map
-    , config
+    React
     , App
 ) {
-    var map = new Map('map', config.mapOptions);
 
-    map.on('load', function() {
-        App.loadApp(map);
-    });
+    React.render(<App />, document.getElementById('app'));
+
 });

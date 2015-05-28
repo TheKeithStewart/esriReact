@@ -44,6 +44,6 @@ define([
 
     });
 
-    React.render(<App />, document.getElementById('app'));
+    return App;
 
 });

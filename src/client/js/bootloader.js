@@ -28,14 +28,17 @@
         }, {
             name: 'app'
             , location: jsPath + '/app'
-            , main: 'App'
         }, {
             name: 'layout'
             , location: jsPath + '/app/components/layout'
         }, {
             name: 'map'
             , location: jsPath + '/app/components/map'
+        }, {
+            name: 'main'
+            , location: jsPath + '/main'
+            , main: 'main'
         }]
-    }, ['app']);
+    }, ['main']);
 
 })();
