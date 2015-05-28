@@ -4,15 +4,11 @@ define([
     'react'
     , 'classnames'
     , 'map/GeocoderWidget'
-    , 'map/BasemapToggleWidget'
 ], function(
     React
     , classnames
     , GeocoderWidget
-    , BasemapToggleWidget
 ) {
-
-    var map;
 
     var MenuPanel = React.createClass({
 
@@ -37,7 +33,6 @@ define([
         }
 
         , componentDidMount: function () {
-            map = this.props.map;
             var settingsIcon = document.getElementById('settings-icon');
             settingsIcon.addEventListener('click', this._toggle, false);
         }
@@ -53,7 +48,6 @@ define([
             return (
                 <div className={classes} id='MenuPanel'>
                     <GeocoderWidget map={this.props.map}></GeocoderWidget>
-                    <BasemapToggleWidget map={this.props.map}></BasemapToggleWidget>
                 </div>
             )
         }
@@ -92,7 +86,7 @@ define([
                 } else {
                     self._updateMenuState();
                     // Add any other necessary code here
-                    map.resize();
+                    self.props.map.resize();
                 }
             }
 
@@ -123,7 +117,7 @@ define([
                     requestAnimationFrame(step);
                 } else {
                     // Add any other necessary code here
-                    map.resize();
+                    self.props.map.resize();
                 }
             }
 

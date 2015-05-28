@@ -2,48 +2,52 @@
 
 define([
     'react'
-    , 'main/config'
     , 'esri/map'
+    , 'app/config'
     , 'layout/Header'
     , 'layout/MenuPanel'
-    , 'app/components/MapComponents'
 ], function (
     React
-    , config
     , Map
+    , config
     , Header
     , MenuPanel
-    , MapComponents
 ) {
+
+    var map;
 
     var App = React.createClass({
 
         getInitialState: function () {
             return {
-
+                map: map
             }
         }
 
         , componentDidMount: function () {
-
+            map = new Map('map', config.mapOptions);
+            var component = this;
+            map.on('load', function() {
+                component.setState({map: map});
+            });
         }
 
         , render: function () {
             return (
                 <div className='app'>
                     <Header defaultProps={config.defaultProps}></Header>
-                    <MenuPanel map={this.props.map}></MenuPanel>
-                    <MapComponents map={this.props.map}></MapComponents>
+                    <div className='body'>
+                        <MenuPanel map={this.state.map}></MenuPanel>
+                        <div id='map' className="map-panel">
+                            <div id="settings-icon" className='settings-icon'></div>
+                        </div>
+                    </div>
                 </div>
             );
         }
 
     });
 
-    return {
-        loadApp: function(map) {
-            React.render(<App map={map} />, document.getElementById('app'));
-        }
-    }
+    React.render(<App />, document.getElementById('app'));
 
 });

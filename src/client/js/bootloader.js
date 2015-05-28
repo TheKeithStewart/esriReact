@@ -26,11 +26,9 @@
             , location: locationPath + 'bower_components/classnames'
             , main: 'index'
         }, {
-            name: 'main'
-            , location: jsPath + '/main'
-        }, {
             name: 'app'
             , location: jsPath + '/app'
+            , main: 'App'
         }, {
             name: 'layout'
             , location: jsPath + '/app/components/layout'
@@ -38,6 +36,6 @@
             name: 'map'
             , location: jsPath + '/app/components/map'
         }]
-    }, ['main']);
+    }, ['app']);
 
 })();
